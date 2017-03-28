@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Post Creation{% endblock %}
+
+
+{% block content %}
+{{ message_login }}
+{{ message_query }}
+Now, let us see your links......
+<br><br><hr>
+
+{% for i in 0..data1|length %}
+    *  link name :{{ data1[i] }}<br>
+link : {{ data1[i] }}
+    <hr>
+{% endfor %}
+
+
+{% endblock %}
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+Hello people <br> <hr>
+<form class="post" method="post" action="/post">
+email:
+<input type="text" name="email"><br>
+link name:
+<input type="text" name="link_name"><br>
+link:
+<input type="text" name="link">
+<input type="submit">
+</form>
+
+{% endblock %} 	

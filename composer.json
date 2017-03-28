@@ -1,0 +1,20 @@
+ {
+	"name":"asutoshpalai/mvc",
+	"description": "Sample app from mvc lecture",
+	"require":{
+		"torophp/torophp": "dev-master",
+		"twig/twig": "1.*"
+	},
+	"authors":[
+		{
+		 	"name":"Asutosh Palai",
+		 	"email": "asupalai@gmail.com"
+		}
+	],
+	"autoload":{
+		"psr-4":{
+			"Blog\\Controllers\\":"app/controllers",
+			"Blog\\Models\\":"app/models"
+		}
+	}
+}

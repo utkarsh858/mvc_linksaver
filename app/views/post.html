@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}All Posts{% endblock %}
+
+{% block content %}
+ID: <a href="/posts/{{post.id }}">{{ post.id }}</a><br>
+Title: {{ post.title | e }}<br>:
+Content: {{ post.content | e }} <br>;
+<hr>
+{% endblock %}
