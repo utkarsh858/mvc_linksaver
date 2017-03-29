@@ -21,6 +21,20 @@ class Post {
 
 		return $res;
 	}
+	public static function create2($email,$firstname,$lastname){
+		$db = self::DB();
+		$query = $db->prepare("INSERT INTO users(email, firstname, lastname) values ( :email, :firstname, :lastname)");
+		$res = $query->execute(
+			['email' => $email,
+			'firstname' => $firstname,
+			'lastname' => $lastname]);
+
+		if (!$res) {
+			var_dump($query->errorInfo());
+		}
+
+		return $res;
+	}
 	public static function retrieve($email){
 	$servername = "localhost";
 	$username = "root";

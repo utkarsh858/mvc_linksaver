@@ -7,18 +7,28 @@ use Blog\Models\Post;
 
 class PostController extends BaseController{
 
-	public function get($id = null){
-		if ($id){
-			$post = Post::getPost($id);
-			$this->render('post.html', ['post' => $post]);
-		}
-		else{
-			$posts = Post::getAll();
-			$this->render('all_posts.html', ['posts' => $posts]);
-		}
-	}
+	public function get(){
+		
+}
 
 	public function post(){
+		
+		if(isset($_POST["firstname"])&&isset($_POST["lastname"]))
+		{
+			
+		if(isset($_POST["lastname"])&&isset($_POST["firstname"])&&isset($_POST["email"])){
+		if(Post::create2($_POST["email"], $_POST["firstname"],$_POST["lastname"])){
+			$msg="registered successfully";
+		echo "her333e";
+		}
+		else{$msg="unsuccessfull registration";}
+		$this->render('all_posts.html',['message'=> $message]);
+		}
+		}
+
+
+	else{
+	
 		$email = $_POST['email'];
 		$link_name = $_POST['link_name'];
 		$link = $_POST['link'];
@@ -28,7 +38,7 @@ class PostController extends BaseController{
 		if($are_login){
 				
 				$msg_login= "you are registered.";
-		
+		if(isset($link)&&isset($link_name)){
 		if (Post::create($email, $link_name,$link)){
 
 			$msg_query = "Query was entered successfully";
@@ -36,7 +46,7 @@ class PostController extends BaseController{
 		else {
 			
 			$msg_query = "Query insertion failed";
-		}
+		}  }
 		
 		$data=Post::retrieve($email);
 				}
@@ -48,6 +58,6 @@ class PostController extends BaseController{
 
 		$this->render('post_create.html', ['message_login' => $msg_login, 'message_query' => $msg_query, 'data1' => $data[0], 'data2' => $data[1]]);
 			
-
+	}
 	}
 } ?>

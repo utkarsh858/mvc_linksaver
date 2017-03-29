@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-Hello people <br> <hr>
+Login and save link(or leave empty to just login) <br> <hr>
 <form class="post" method="post" action="/post">
 email:
 <input type="text" name="email"><br>
@@ -13,5 +13,17 @@ link:
 <input type="text" name="link">
 <input type="submit">
 </form>
+
+
+Or register here!!!!!!<br>
+
+
+<form method="post" class="post" action=/post>
+	Email:<input type="text" name="email">
+<br>Firstname:
+	<input type="text" name="firstname">
+	<br>Lastname<input type="text" name="lastname">
+<input type="submit" value="Register!" >
+	</form>
 
 {% endblock %} 	

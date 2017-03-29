@@ -6,7 +6,7 @@ ToroHook::add("404", function(){
 	echo "404";
 	http_response_code(404);
 });
-
+echo "here1";
 Toro::serve([
 	'/' => Blog\Controllers\HomeController::class,
 	'/harsh'=> Blog\Controllers\PostController::class,
@@ -14,5 +14,5 @@ Toro::serve([
 	'post/all' => Blog\Controllers\PostController::class,
 	'/post/:number' => Blog\Controllers\PostController::class,
 
-	]);
+	]);echo "here";
 ?>
